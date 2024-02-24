@@ -19,15 +19,17 @@ var randomnumber = () =>{
     var maxRange = 100;
    var n = Math.round(Math.random() * (maxRange - minRange) + minRange);
    document.querySelector('.coindisplay').innerText = n;
-   console.log(rno);
+   //console.log(rno);
     var coincolor = document.getElementById(`m${n}`);
     coincolor.style['background-color'] = 'red';
-    coincolor.style['border-radious'] ='10px';
+    coincolor.style['border-radious'] ='10px 10px';
     if(rno.includes(n) == false){
         rno.push(n);
-
+        //console.log(rno.length);
     }else {
-randomnumber();
+     randomnumber();
     }
-    
+   if(rno.length == 100){
+  alert('Game over');
+   }
 }
